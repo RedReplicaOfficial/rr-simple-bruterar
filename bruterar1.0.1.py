@@ -1,4 +1,4 @@
-# The usual/dependencies
+# The usual & dependencies
 import os
 from time import time, strftime, gmtime
 from threading import Thread
