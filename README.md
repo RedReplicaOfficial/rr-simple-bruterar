@@ -11,3 +11,19 @@ The 2.0 version will have the ability to add keyword list, be approx. 8x faster,
 I may add other Quality of Life (QoL) changes in the future if I come up with them or I get suggested about them. ALL, EVERY suggestion OR idea is welcome!
 
 As far as I know I fixed every possible bug I could find and recreate, but if you do find something, please don't hesitate to tell me.
+
+Features:
+
+1. Main featuer is obviously cracking .RAR files when the password is lost
+2. Password length is set to 14, but can be modified in the code easily
+3. Systematically bruteforces, see current charset
+4. Currently supports letters, capial letters, and numbers, see charset
+5. Clock, Avg. Tries/Min, Avg. Tries/Hour implemented.
+
+Will be added:
+
+- Support for special characters too (ex, !, $, &, etc.)
+- Suppoer for wordlists
+- Way faster technique
+- More extensions to bruteforce through
+- Even though this is a hobby program, niche, small, and very young, multiple languages will be available
