@@ -1,6 +1,6 @@
 # RR's Simple BruteRAR
 
-# <b>Note: This is a proof of concept. It 100% works in a Windows 11 Virtual Python Environment, so I don't see any problem elsewhere too. Make sure dependencies are installed.</b>
+Note: This is a proof of concept. It 100% works in a Windows 11 Virtual Python Environment, so I don't see any problem elsewhere too. Make sure dependencies are installed.
 
 Bruteforces the password of a file with .RAR extension. Very minimalistic UI and build, but works perfectly (as far as I know) The maximum password length is limited to 14, and it will use every possibility using "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789" charset.
 
