@@ -12,16 +12,22 @@ I may add other Quality of Life (QoL) changes in the future if I come up with th
 
 As far as I know I fixed every possible bug I could find and recreate, but if you do find something, please don't hesitate to tell me.
 
-Features:
+Key Features:
 
 1. Main featuer is obviously cracking .RAR files when the password is lost
 2. Password length is set to 14, but can be modified in the code easily
 3. Systematically bruteforces, see current charset
 4. Currently supports letters, capial letters, and numbers, see charset
-5. Clock, Avg. Tries/Min, Avg. Tries/Hour implemented.
+5. Logs everything into an external log file. Logging is also visible inside the program.
+
+Implemented:
+
+1. Clock, Avg. Tries/Min, Avg. Tries/Hour implemented. !!!Logging of these does not work fully yet and is bugged!!!
+2. "Start" button is now greyed out until P/R system is implemented.
 
 Will be added:
 
+- Pausing and resuming the cracking
 - Support for special characters too (ex, !, $, &, etc.)
 - Suppoer for wordlists
 - Way faster technique
