@@ -12,7 +12,7 @@ rarfile.UNRAR_TOOL = r"C:\Program Files\WinRAR\UnRAR.exe"
 
 # Create the main application window
 root = Tk()
-root.title("RR's Simple BruteRAR v1.0.2")
+root.title("RR's Simple BruteRAR v1.0.3")
 
 # Define character set and maximum password length
 charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
