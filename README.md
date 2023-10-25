@@ -10,7 +10,7 @@ The 2.0 version will have the ability to add keyword list, be approx. 8x faster,
 
 I may add other Quality of Life (QoL) changes in the future if I come up with them or I get suggested about them. ALL, EVERY suggestion OR idea is welcome!
 
-As far as I know I fixed every possible bug I could find and recreate, but if you do find something, please don't hesitate to tell me.
+As far as I know I fixed every possible bug I could find and recreate, but if you do find something, please don't hesitate to tell me!
 
 Key Features:
 
