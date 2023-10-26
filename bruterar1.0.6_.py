@@ -1,9 +1,10 @@
 import os
+import itertools
 import rarfile
 import webbrowser
 from threading import Thread
 from tkinter import Tk, StringVar, Text, Button, Label, filedialog, END, messagebox
-from time import gmtime, strftime, time
+from time import gmtime, strftime, time, sleep
 
 rarfile.UNRAR_TOOL = os.path.join(os.environ['ProgramFiles'], "WinRAR", "UnRAR.exe")
 root = Tk()
@@ -67,40 +68,25 @@ def safe_log_insert(text):
 def try_password(password):
     global total_tries, password_found, pause
     while pause:
-        time.sleep(0.1)
+        sleep(0.1)
     try:
         if not os.path.exists(rar_file_path.get()):
             safe_log_insert("RAR file does not exist.")
             return False
         try:
             with rarfile.RarFile(rar_file_path.get()) as archive:
-                archive.extractall(path=r"C:\DestinationPath", pwd=password)
+                archive.extractall(pwd=password)
                 password_found = True
                 stop_counters()
                 return True
         except rarfile.BadRarFile:
             total_tries += 1
-            safe_log_insert(f"Attempted password: {password}")
+            safe_log_insert(f"{password}, ")
             return False
     except Exception as e:
         log_text.insert(END, "Error: " + str(e))
         log_text.see(END)
         return False
-
-
-def get_keyword_passwords():
-    try:
-        filename = filedialog.askopenfilename(filetypes=[('Text files', '*.txt')])
-        if filename:
-            with open(filename, 'r') as file:
-                keywords = file.read()
-            passwords = keywords.split(':')
-            return passwords
-        return None
-    except Exception as e:
-        log_text.insert(END, "Error while reading passwords file: " + str(e))
-        log_text.see(END)
-        return None
 
 
 def display_password_found(password):
@@ -113,12 +99,6 @@ def display_password_found(password):
 
 def brute_force_password():
     global start_time, total_tries
-    keyword_passwords = get_keyword_passwords()
-    if keyword_passwords is not None:
-        for password in keyword_passwords:
-            if try_password(password):
-                display_password_found(password)
-                return
     for length in range(1, max_length + 1):
         password_combinations = itertools.product(charset, repeat=length)
         for password_tuple in password_combinations:
