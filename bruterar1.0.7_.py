@@ -17,6 +17,8 @@ log_text = Text(root)
 label_text = StringVar(root)
 start_time = 0
 total_tries = 0
+pause_start_time = 0
+pause_time = 0
 status_updater_interval = 0.5
 clock_updater_interval = 0.5
 password_found = False
@@ -109,11 +111,11 @@ def brute_force_password():
 
 
 def times_up():
-    global start_time, total_tries, pause
+    global start_time, total_tries, pause, pause_time
     if pause:
         return
     if not password_found:
-        elapsed_time = time() - start_time
+        elapsed_time = time() - start_time - pause_time
         average_tries_per_second = total_tries / elapsed_time if elapsed_time > 0 else 0
         average_tries_per_hour = average_tries_per_second * 3600
         elapsed_time_str = strftime("%H:%M:%S", gmtime(elapsed_time))
@@ -128,16 +130,16 @@ def times_up():
         if root.state() != "destroyed":
             root.after(int(status_updater_interval * 1000), times_up)
 
+
 def start_brute_force():
-    global start_time
-    if rar_file_path.get() == '':
-        messagebox.showinfo("No file selected", "Please select a file to crack.")
-        return
+    global start_time, pause_time
+    pause_time = 0  # reset pause time on each start
     start_time = time()
     try:
         Thread(target=brute_force_password).start()
     except Exception as e:
         log_text.insert(END, "Error while starting brute force: " + str(e))
+        log_text.see(END)
     times_up()
     start_button.config(state="disabled")
     pause_button.config(state="normal")
@@ -145,14 +147,16 @@ def start_brute_force():
 
 
 def pause_brute_force():
-    global pause
+    global pause, pause_start_time
     pause = True
+    pause_start_time = time() # Store pause start time
     resume_button.config(state="normal")
 
 
 def resume_brute_force():
-    global pause
+    global pause, pause_time, pause_start_time
     pause = False
+    pause_time += time() - pause_start_time  # Add pause time
     resume_button.config(state="disabled")
     times_up()
 
