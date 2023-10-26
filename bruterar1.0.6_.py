@@ -109,7 +109,9 @@ def brute_force_password():
 
 
 def times_up():
-    global start_time, total_tries
+    global start_time, total_tries, pause
+    if pause:
+        return
     if not password_found:
         elapsed_time = time() - start_time
         average_tries_per_second = total_tries / elapsed_time if elapsed_time > 0 else 0
@@ -125,7 +127,6 @@ def times_up():
 
         if root.state() != "destroyed":
             root.after(int(status_updater_interval * 1000), times_up)
-
 
 def start_brute_force():
     global start_time
