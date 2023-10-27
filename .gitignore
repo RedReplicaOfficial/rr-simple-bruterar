@@ -1,2 +1,5 @@
 
 CRU.exe
+*.log
+app.log
+app.log
