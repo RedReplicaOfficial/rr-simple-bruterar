@@ -87,7 +87,8 @@ def brute_force_password(window, rar_file_path):
                 result = try_password(password, rar_file_path)
                 if result == True:
                     print(display_password_found(password))
-                    break
+                    window.write_event_value('-THREAD-', '')
+                    return
                 else:
                     print(result)
     except Exception as e:
