@@ -6,8 +6,6 @@ Bruteforces the password of a file with .RAR extension. Very minimalistic UI and
 
 You may freely edit the code, if you know the password length, change it to that, it will be way faster to aquire the password. Also edit the charset if you would like.
 
-The 2.0 version will have the ability to add keyword list, be approx. 8x faster, and it will also include more extensions.
-
 I may add other Quality of Life (QoL) changes in the future if I come up with them or I get suggested about them. ALL, EVERY suggestion OR idea is welcome!
 
 As far as I know I fixed every possible bug I could find and recreate, but if you do find something, please don't hesitate to tell me!
@@ -22,14 +20,13 @@ Key Features:
 
 Implemented:
 
-1. Clock, Avg. Tries/Min, Avg. Tries/Hour implemented. !!!Logging of these does not work fully yet and is bugged!!!
+1. Clock, Avg. Tries/Min, Avg. Tries/Hour implemented. 
 2. "Start" button is now greyed out until P/R system is implemented.
+3. Pausing and resuming the cracking
+4. Way faster technique
+5. Better GUI
 
 Will be added:
-
-- Pausing and resuming the cracking
+ 
 - Support for special characters too (ex, !, $, &, etc.)
-- Suppoer for wordlists
-- Way faster technique
-- More extensions to bruteforce through
 - Even though this is a hobby program, niche, small, and very young, multiple languages will be available
