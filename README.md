@@ -1,4 +1,4 @@
-# RR's Simple BruteRAR
+# RR's Simple BruteRAR nmn
 
 Note: This is a proof of concept. It 100% works in a Windows 11 Virtual Python Environment, so I don't see any problem elsewhere too. Make sure dependencies are installed.
 
